@@ -1,25 +1,37 @@
-import logo from './logo.svg';
+import React from 'react';
+import logo from './logo.png';
+import User from './components/user';
 import './App.css';
+import UserSignIn from './components/googleSign';
 
-function App() {
+
+class App extends React.Component {
+
+  render() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="nav">
+        <nav className="nav-header">
+        
+            <img src={logo} alt="DexDev" className="header-image"></img>
+            <ul className="types">
+              <li>Business</li>
+              <li>Social</li>
+              <li>Financial</li>
+              <li>Chatting Apps</li>
+              <li>E-commerce</li>
+            </ul>
+            <User
+            className="g-user"
+            user={this.googleUser}
+            googleProfile={this.handleGoogleProfile}
+            />
+
+        </nav>
+      </div>
     </div>
   );
+  }
 }
 
 export default App;
